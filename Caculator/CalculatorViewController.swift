@@ -32,15 +32,21 @@ class CalculatorViewController: UIViewController, StoryboardView {
     @IBOutlet weak var equalButton: UIButton!
     
     func bind(reactor: CalculatorReactor) {
-        // 숫자 버튼 클릭 시 인터렉션 리액터 바인딩
-        let numberButtons: [UIButton] = [zeroButton, oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, sevenButton, eightButton, nineButton, dotButton]
+        // Action
+        
+        // 숫자 및 Dot 버튼 클릭 시 인터렉션 리액터 바인딩
+        let numberButtons: [UIButton] = [zeroButton, oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, sevenButton, eightButton, nineButton]
         
         numberButtons.enumerated().forEach({ (button) in
             button.element.rx.tap
-                .map { .inputNumber }
+                .map { .inputNumber("\(button.offset)") }
                 .bind(to: reactor.action)
                 .disposed(by: disposeBag)
         })
+        self.dotButton.rx.tap
+            .map { .inputDot(".") }
+            .bind(to:reactor.action)
+            .disposed(by: self.disposeBag)
         
         // AC 버튼 클릭 시 인터렉션 리액터 바인딩
         self.acButton.rx.tap
@@ -50,33 +56,40 @@ class CalculatorViewController: UIViewController, StoryboardView {
         
         // 연산 버튼 클릭 시 인터렉션 리액터 바인딩
         self.signButton.rx.tap
-            .map { .operation }
+            .map { .operation(.sign({ -$0 })) }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         self.percentButton.rx.tap
-            .map { .operation }
+            .map { .operation(.percent({ $0 / 100})) }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         self.divisionButton.rx.tap
-            .map { .operation }
+            .map { .operation(.operation({ $0 / $1 })) }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         self.multiplyButton.rx.tap
-            .map { .operation }
+            .map { .operation(.operation({ $0 * $1 })) }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         self.subtractButton.rx.tap
-            .map { .operation }
+            .map { .operation(.operation({ $0 - $1 })) }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         self.addButton.rx.tap
-            .map { .operation }
+            .map { .operation(.operation({ $0 + $1 })) }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         self.equalButton.rx.tap
-            .map { .operation }
+            .map { .operation(.result) }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
+        
+        // State
+        // 연산 결과 뷰 바인딩
+        reactor.state.map { $0.displayResult }
+            .bind(to: self.resultLabel.rx.text)
+            .disposed(by: self.disposeBag)
+        
+        
     }
-
 }
