@@ -258,6 +258,7 @@
                         <outlet property="buttonTwo" destination="3wc-BX-Pjs" id="Yvz-NR-ikH"/>
                         <outlet property="buttonZero" destination="xC4-Oi-ctM" id="sv8-1B-bB3"/>
                         <outlet property="divisionButton" destination="6z7-G3-Xey" id="NPy-vY-4ai"/>
+                        <outlet property="dotButton" destination="A77-4J-Qsl" id="5l9-bl-Z4W"/>
                         <outlet property="eightButton" destination="woI-1x-ICa" id="QTq-Ih-hY1"/>
                         <outlet property="equalButton" destination="jV7-7s-ZR4" id="buE-xs-zS8"/>
                         <outlet property="fiveButton" destination="yNb-LX-2fQ" id="tcU-R1-4dP"/>

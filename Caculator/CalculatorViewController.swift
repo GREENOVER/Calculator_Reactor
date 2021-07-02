@@ -19,6 +19,7 @@ class CalculatorViewController: UIViewController, StoryboardView {
     @IBOutlet weak var sevenButton: UIButton!
     @IBOutlet weak var eightButton: UIButton!
     @IBOutlet weak var nineButton: UIButton!
+    @IBOutlet weak var dotButton: UIButton!
     
     @IBOutlet weak var acButton: UIButton!
     
@@ -30,14 +31,49 @@ class CalculatorViewController: UIViewController, StoryboardView {
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var equalButton: UIButton!
     
-    
     func bind(reactor: CalculatorReactor) {
+        // 숫자 버튼 클릭 시 인터렉션 리액터 바인딩
+        let numberButtons: [UIButton] = [zeroButton, oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, sevenButton, eightButton, nineButton, dotButton]
+        
+        numberButtons.enumerated().forEach({ (button) in
+            button.element.rx.tap
+                .map { .inputNumber }
+                .bind(to: reactor.action)
+                .disposed(by: disposeBag)
+        })
+        
+        // AC 버튼 클릭 시 인터렉션 리액터 바인딩
         self.acButton.rx.tap
             .map { .clear }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)
         
+        // 연산 버튼 클릭 시 인터렉션 리액터 바인딩
         self.signButton.rx.tap
+            .map { .operation }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+        self.percentButton.rx.tap
+            .map { .operation }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+        self.divisionButton.rx.tap
+            .map { .operation }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+        self.multiplyButton.rx.tap
+            .map { .operation }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+        self.subtractButton.rx.tap
+            .map { .operation }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+        self.addButton.rx.tap
+            .map { .operation }
+            .bind(to: reactor.action)
+            .disposed(by: self.disposeBag)
+        self.equalButton.rx.tap
             .map { .operation }
             .bind(to: reactor.action)
             .disposed(by: self.disposeBag)

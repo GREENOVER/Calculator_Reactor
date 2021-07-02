@@ -4,8 +4,8 @@ import RxSwift
 
 final class CalculatorReactor: Reactor {
     enum Action {
-        case operation
         case inputNumber
+        case operation
         case clear
     }
     
