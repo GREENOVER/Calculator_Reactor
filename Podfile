@@ -5,6 +5,8 @@ target 'Caculator' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'ReactorKit'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   # Pods for Caculator
 

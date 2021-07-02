@@ -32,7 +32,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7r-wf-nwj" userLabel="PlusMinus Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7r-wf-nwj" userLabel="Sign Button">
                                                 <rect key="frame" x="99" y="0.0" width="85" height="84"/>
                                                 <color key="backgroundColor" red="0.6470588235294118" green="0.6470588235294118" blue="0.6470588235294118" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -122,7 +122,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ze-LS-Ap6" userLabel="Minus Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ze-LS-Ap6" userLabel="Subtract Button">
                                                 <rect key="frame" x="297" y="0.0" width="85" height="84"/>
                                                 <color key="backgroundColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -159,7 +159,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJO-Ao-jrL" userLabel="Plus Button">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJO-Ao-jrL" userLabel="Add Button">
                                                 <rect key="frame" x="297" y="0.0" width="85" height="84"/>
                                                 <color key="backgroundColor" red="0.99607843139999996" green="0.62352941179999999" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
@@ -221,23 +221,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kce-tZ-QEl">
-                                <rect key="frame" x="0.0" y="44" width="414" height="244"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="O9M-Su-wL4"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cqe-Ib-L9a" firstAttribute="top" secondItem="kce-tZ-QEl" secondAttribute="bottom" id="1Ql-fA-c76"/>
-                            <constraint firstItem="kce-tZ-QEl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="8QI-Wt-aDg"/>
+                            <constraint firstItem="cqe-Ib-L9a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="244" id="4ft-hi-NGN"/>
                             <constraint firstItem="cqe-Ib-L9a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="903-pE-e3K"/>
-                            <constraint firstItem="kce-tZ-QEl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="AUP-iQ-n0N"/>
                             <constraint firstItem="COv-Br-bs0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LO9-Hg-rRc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kce-tZ-QEl" secondAttribute="trailing" id="NLb-jP-ky6"/>
                             <constraint firstItem="cqe-Ib-L9a" firstAttribute="height" secondItem="iWh-8a-dUc" secondAttribute="height" id="Tfk-Og-imB"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="COv-Br-bs0" secondAttribute="bottom" id="oLz-mw-1PD"/>
                             <constraint firstItem="COv-Br-bs0" firstAttribute="top" secondItem="cqe-Ib-L9a" secondAttribute="bottom" constant="14" id="uFd-Do-6Go"/>
@@ -246,6 +236,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="acButton" destination="iWh-8a-dUc" id="Sgo-qs-NkQ"/>
+                        <outlet property="addButton" destination="iJO-Ao-jrL" id="vRR-Pn-cmD"/>
                         <outlet property="buttonAC" destination="iWh-8a-dUc" id="BUJ-Y0-efe"/>
                         <outlet property="buttonDivide" destination="6z7-G3-Xey" id="4Pz-nc-5Hk"/>
                         <outlet property="buttonEight" destination="woI-1x-ICa" id="oxF-YL-Cwo"/>
@@ -265,7 +257,25 @@
                         <outlet property="buttonThree" destination="xCj-hk-jDK" id="tZd-wO-Gyo"/>
                         <outlet property="buttonTwo" destination="3wc-BX-Pjs" id="Yvz-NR-ikH"/>
                         <outlet property="buttonZero" destination="xC4-Oi-ctM" id="sv8-1B-bB3"/>
+                        <outlet property="divisionButton" destination="6z7-G3-Xey" id="NPy-vY-4ai"/>
+                        <outlet property="eightButton" destination="woI-1x-ICa" id="QTq-Ih-hY1"/>
+                        <outlet property="equalButton" destination="jV7-7s-ZR4" id="buE-xs-zS8"/>
+                        <outlet property="fiveButton" destination="yNb-LX-2fQ" id="tcU-R1-4dP"/>
+                        <outlet property="fourButton" destination="aN4-MR-2NC" id="J9j-Rt-0Gt"/>
                         <outlet property="labelResult" destination="cqe-Ib-L9a" id="sxt-u7-taT"/>
+                        <outlet property="multiplyButton" destination="wuC-w2-wT0" id="Ly7-X8-dnt"/>
+                        <outlet property="nineButton" destination="QAM-C6-a86" id="Ryv-mw-T58"/>
+                        <outlet property="oneButton" destination="3wc-BX-Pjs" id="XqI-on-BPI"/>
+                        <outlet property="percentButton" destination="vWa-JD-lDu" id="ni3-fQ-fYQ"/>
+                        <outlet property="plusMinusButton" destination="Y7r-wf-nwj" id="OAn-lk-aaw"/>
+                        <outlet property="resultLabel" destination="cqe-Ib-L9a" id="R1G-jo-pwY"/>
+                        <outlet property="sevenButton" destination="0dC-pD-npG" id="iIF-aG-gKP"/>
+                        <outlet property="signButton" destination="Y7r-wf-nwj" id="DQe-sh-fiU"/>
+                        <outlet property="sixButton" destination="fuL-bV-qvJ" id="tqu-Vv-d0b"/>
+                        <outlet property="subtractButton" destination="8ze-LS-Ap6" id="PWH-dV-sbc"/>
+                        <outlet property="threeButton" destination="xCj-hk-jDK" id="X4D-67-GQC"/>
+                        <outlet property="twoButton" destination="3wc-BX-Pjs" id="ds4-gx-t7b"/>
+                        <outlet property="zeroButton" destination="xC4-Oi-ctM" id="CtP-DA-d5V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
