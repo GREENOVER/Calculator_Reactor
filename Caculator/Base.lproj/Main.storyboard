@@ -238,37 +238,16 @@
                     <connections>
                         <outlet property="acButton" destination="iWh-8a-dUc" id="Sgo-qs-NkQ"/>
                         <outlet property="addButton" destination="iJO-Ao-jrL" id="vRR-Pn-cmD"/>
-                        <outlet property="buttonAC" destination="iWh-8a-dUc" id="BUJ-Y0-efe"/>
-                        <outlet property="buttonDivide" destination="6z7-G3-Xey" id="4Pz-nc-5Hk"/>
-                        <outlet property="buttonEight" destination="woI-1x-ICa" id="oxF-YL-Cwo"/>
-                        <outlet property="buttonEqual" destination="jV7-7s-ZR4" id="4sx-E6-4Kb"/>
-                        <outlet property="buttonFive" destination="yNb-LX-2fQ" id="5ta-LJ-yoF"/>
-                        <outlet property="buttonFour" destination="aN4-MR-2NC" id="TFg-WA-P9s"/>
-                        <outlet property="buttonMinus" destination="8ze-LS-Ap6" id="0dL-Ef-Ufz"/>
-                        <outlet property="buttonMultiply" destination="wuC-w2-wT0" id="H4D-vX-6QO"/>
-                        <outlet property="buttonNine" destination="QAM-C6-a86" id="Vh9-NS-4P5"/>
-                        <outlet property="buttonOne" destination="6W4-lz-bjS" id="j7B-qr-Aso"/>
-                        <outlet property="buttonPercent" destination="vWa-JD-lDu" id="Ni6-Oz-DVL"/>
-                        <outlet property="buttonPlus" destination="iJO-Ao-jrL" id="dwU-vY-rMw"/>
-                        <outlet property="buttonPlusMinus" destination="Y7r-wf-nwj" id="owY-E4-jdU"/>
-                        <outlet property="buttonPoint" destination="A77-4J-Qsl" id="Vbj-gh-nw7"/>
-                        <outlet property="buttonSeven" destination="0dC-pD-npG" id="XxJ-GD-mLr"/>
-                        <outlet property="buttonSix" destination="fuL-bV-qvJ" id="oNC-5c-Szx"/>
-                        <outlet property="buttonThree" destination="xCj-hk-jDK" id="tZd-wO-Gyo"/>
-                        <outlet property="buttonTwo" destination="3wc-BX-Pjs" id="Yvz-NR-ikH"/>
-                        <outlet property="buttonZero" destination="xC4-Oi-ctM" id="sv8-1B-bB3"/>
                         <outlet property="divisionButton" destination="6z7-G3-Xey" id="NPy-vY-4ai"/>
                         <outlet property="dotButton" destination="A77-4J-Qsl" id="5l9-bl-Z4W"/>
                         <outlet property="eightButton" destination="woI-1x-ICa" id="QTq-Ih-hY1"/>
                         <outlet property="equalButton" destination="jV7-7s-ZR4" id="buE-xs-zS8"/>
                         <outlet property="fiveButton" destination="yNb-LX-2fQ" id="tcU-R1-4dP"/>
                         <outlet property="fourButton" destination="aN4-MR-2NC" id="J9j-Rt-0Gt"/>
-                        <outlet property="labelResult" destination="cqe-Ib-L9a" id="sxt-u7-taT"/>
                         <outlet property="multiplyButton" destination="wuC-w2-wT0" id="Ly7-X8-dnt"/>
                         <outlet property="nineButton" destination="QAM-C6-a86" id="Ryv-mw-T58"/>
-                        <outlet property="oneButton" destination="3wc-BX-Pjs" id="XqI-on-BPI"/>
+                        <outlet property="oneButton" destination="6W4-lz-bjS" id="PS8-gO-CKR"/>
                         <outlet property="percentButton" destination="vWa-JD-lDu" id="ni3-fQ-fYQ"/>
-                        <outlet property="plusMinusButton" destination="Y7r-wf-nwj" id="OAn-lk-aaw"/>
                         <outlet property="resultLabel" destination="cqe-Ib-L9a" id="R1G-jo-pwY"/>
                         <outlet property="sevenButton" destination="0dC-pD-npG" id="iIF-aG-gKP"/>
                         <outlet property="signButton" destination="Y7r-wf-nwj" id="DQe-sh-fiU"/>

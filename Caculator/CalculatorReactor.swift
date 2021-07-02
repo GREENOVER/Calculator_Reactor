@@ -26,8 +26,26 @@ final class CalculatorReactor: Reactor {
         case clear
     }
     
-    struct State {
-        var displayResult: String = ""
+    class State {
+        var displayText: String = "0"
+        var resultNum: Decimal = 0
+        var operation: Operation?
+        var inputText: String = ""
+        
+        var inputNum: Decimal {
+            guard let inputValue = Decimal(string:inputText) else {
+                return resultNum
+            }
+            return inputValue
+        }
+        
+        func checkPrefixNum() {
+            if !(inputText.contains(".")) && inputText.hasPrefix("0") {
+                inputText.removeFirst()
+            }
+        }
+        
+        
     }
     
     // State 초기화 상수 선언
@@ -47,8 +65,23 @@ final class CalculatorReactor: Reactor {
         }
     }
     
+    // 이전 Mutation 상태 받아 다음 상태 반환
     func reduce(state: State, mutation: Mutation) -> State {
-        <#code#>
+        switch mutation {
+        case .number(let number):
+            state.inputText.append(number)
+            state.checkPrefixNum()
+            state.displayText = state.inputText
+        case .dot(let dot):
+            break
+        case .operation(let operation):
+            break
+        case .clear:
+            break
+        }
+        
+        
+        return state
     }
     
 }
