@@ -30,7 +30,7 @@ final class CalculatorReactor: Reactor {
     var displayText: String = "0"
     var resultNum: Decimal = 0
     var operation: Operation?
-    var inputText: String = ""
+    var inputText: String = "0"
     
     var inputNum: Decimal {
       guard let inputValue = Decimal(string:inputText) else {
@@ -85,8 +85,8 @@ final class CalculatorReactor: Reactor {
     case .operation(let operation):
       break
     case .clear:
-      state.inputText = ""
-      state.displayText = ""
+      state.inputText = "0"
+      state.displayText = "0"
       state.operation = nil
     }
     
