@@ -33,7 +33,6 @@ class CalculatorViewController: UIViewController, StoryboardView {
   
   func bind(reactor: CalculatorReactor) {
     // Action
-    
     // 숫자 및 Dot 버튼 클릭 시 인터렉션 리액터 바인딩
     let numberButtons: [UIButton] = [zeroButton, oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, sevenButton, eightButton, nineButton]
     
