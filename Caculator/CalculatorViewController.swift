@@ -31,11 +31,6 @@ class CalculatorViewController: UIViewController, StoryboardView {
   @IBOutlet weak var addButton: UIButton!
   @IBOutlet weak var equalButton: UIButton!
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    print(reactor)
-  }
-  
   func bind(reactor: CalculatorReactor) {
     // Action
     
