@@ -47,7 +47,7 @@
 		125BE933268D946F006FFC48 = {
 			isa = PBXGroup;
 			children = (
-				125BE93E268D946F006FFC48 /* Caculator */,
+				125BE93E268D946F006FFC48 /* Calculator */,
 				125BE93D268D946F006FFC48 /* Products */,
 				78BE79CB744BE94E5FE4B096 /* Pods */,
 				BDD27BA03EE6724B0FA457D6 /* Frameworks */,
@@ -62,7 +62,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		125BE93E268D946F006FFC48 /* Caculator */ = {
+		125BE93E268D946F006FFC48 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
 				1262AE2B26915F5200D3074E /* Supporting Files */,
@@ -71,7 +71,7 @@
 				125BE945268D946F006FFC48 /* Main.storyboard */,
 				125BE94A268D9470006FFC48 /* LaunchScreen.storyboard */,
 			);
-			path = Caculator;
+			path = Calculator;
 			sourceTree = "<group>";
 		};
 		1262AE2B26915F5200D3074E /* Supporting Files */ = {
@@ -369,7 +369,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJPXPHW2TN;
-				INFOPLIST_FILE = "Caculator/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Calculator/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,7 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJPXPHW2TN;
-				INFOPLIST_FILE = "Caculator/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "Calculator/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
