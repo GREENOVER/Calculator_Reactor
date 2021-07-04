@@ -65,16 +65,24 @@
 		125BE93E268D946F006FFC48 /* Caculator */ = {
 			isa = PBXGroup;
 			children = (
-				125BE93F268D946F006FFC48 /* AppDelegate.swift */,
-				125BE941268D946F006FFC48 /* SceneDelegate.swift */,
+				1262AE2B26915F5200D3074E /* Supporting Files */,
 				125BE943268D946F006FFC48 /* CalculatorViewController.swift */,
 				129B3D48268EA7E00030167E /* CalculatorReactor.swift */,
 				125BE945268D946F006FFC48 /* Main.storyboard */,
-				125BE948268D9470006FFC48 /* Assets.xcassets */,
 				125BE94A268D9470006FFC48 /* LaunchScreen.storyboard */,
-				125BE94D268D9470006FFC48 /* Info.plist */,
 			);
 			path = Caculator;
+			sourceTree = "<group>";
+		};
+		1262AE2B26915F5200D3074E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				125BE93F268D946F006FFC48 /* AppDelegate.swift */,
+				125BE941268D946F006FFC48 /* SceneDelegate.swift */,
+				125BE948268D9470006FFC48 /* Assets.xcassets */,
+				125BE94D268D9470006FFC48 /* Info.plist */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		78BE79CB744BE94E5FE4B096 /* Pods */ = {
@@ -361,7 +369,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJPXPHW2TN;
-				INFOPLIST_FILE = Caculator/Info.plist;
+				INFOPLIST_FILE = "Caculator/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,7 +389,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJPXPHW2TN;
-				INFOPLIST_FILE = Caculator/Info.plist;
+				INFOPLIST_FILE = "Caculator/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
