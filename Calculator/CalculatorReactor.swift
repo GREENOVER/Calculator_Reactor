@@ -75,7 +75,9 @@ final class CalculatorReactor: Reactor {
     case .operation(let operation):
       break
     case .clear:
-      break
+      state.inputText = ""
+      state.displayText = ""
+      state.operation = nil
     }
     
     
