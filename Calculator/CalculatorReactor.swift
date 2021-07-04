@@ -44,6 +44,13 @@ final class CalculatorReactor: Reactor {
         inputText.removeFirst()
       }
     }
+    
+    func checkDot() {
+      let dot = inputText.filter{ $0 == "." }
+      if dot.count > 1 {
+        inputText.remove(at: inputText.lastIndex(of: ".")!)
+      }
+    }
   }
   
   // State 초기화 상수 선언
@@ -71,7 +78,10 @@ final class CalculatorReactor: Reactor {
       state.checkPrefixNum()
       state.displayText = state.inputText
     case .dot(let dot):
-      break
+      state.inputText.append(dot)
+      state.checkPrefixNum()
+      state.checkDot()
+      state.displayText = state.inputText
     case .operation(let operation):
       break
     case .clear:
@@ -80,8 +90,6 @@ final class CalculatorReactor: Reactor {
       state.operation = nil
     }
     
-    
     return state
   }
-  
 }
