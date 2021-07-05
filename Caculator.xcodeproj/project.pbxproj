@@ -66,8 +66,8 @@
 			isa = PBXGroup;
 			children = (
 				1262AE2B26915F5200D3074E /* Supporting Files */,
-				125BE943268D946F006FFC48 /* CalculatorViewController.swift */,
-				129B3D48268EA7E00030167E /* CalculatorReactor.swift */,
+				128A09772692B2CB00B554B1 /* View */,
+				128A09792692B2EA00B554B1 /* Reactor */,
 				125BE945268D946F006FFC48 /* Main.storyboard */,
 				125BE94A268D9470006FFC48 /* LaunchScreen.storyboard */,
 			);
@@ -83,6 +83,22 @@
 				125BE94D268D9470006FFC48 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		128A09772692B2CB00B554B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				125BE943268D946F006FFC48 /* CalculatorViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		128A09792692B2EA00B554B1 /* Reactor */ = {
+			isa = PBXGroup;
+			children = (
+				129B3D48268EA7E00030167E /* CalculatorReactor.swift */,
+			);
+			path = Reactor;
 			sourceTree = "<group>";
 		};
 		78BE79CB744BE94E5FE4B096 /* Pods */ = {
