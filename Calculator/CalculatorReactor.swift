@@ -33,10 +33,12 @@ final class CalculatorReactor: Reactor {
     var inputText: String = "0"
     
     var inputNum: Decimal {
-      guard let inputValue = Decimal(string:inputText) else {
-        return resultNum
+      if let value = Decimal(string: inputText) {
+        if value != 0 {
+          return value
+        }
       }
-      return inputValue
+      return resultNum
     }
     
     func checkPrefixNum() {
@@ -83,13 +85,38 @@ final class CalculatorReactor: Reactor {
       state.checkDot()
       state.displayText = state.inputText
     case .operation(let operation):
-      break
+      switch operation {
+      case .operation:
+        state.operation = operation
+        state.resultNum = state.inputNum
+        state.inputText = "0"
+      case .sign(let sign):
+        if var temp =  Decimal(string: state.inputText) {
+          temp += state.resultNum
+          state.resultNum = 0
+          state.inputText = String("\(sign(temp))")
+        }
+        state.displayText = state.inputText
+      case .percent(let percent):
+        if var temp =  Decimal(string: state.inputText) {
+          temp += state.resultNum
+          state.resultNum = 0
+          state.inputText = String("\(percent(temp))")
+        }
+        state.displayText = state.inputText
+      case .result:
+        if case let .operation(operation) = state.operation {
+          state.resultNum = operation(state.resultNum, state.inputNum)
+          state.inputText = "0"
+          state.operation = nil
+        }
+        state.displayText = String("\(state.resultNum)")
+      }
     case .clear:
       state.inputText = "0"
       state.displayText = "0"
       state.operation = nil
     }
-    
     return state
   }
 }
