@@ -83,7 +83,8 @@ class CalculatorViewController: UIViewController, StoryboardView {
     
     // State
     // 연산 결과 뷰 바인딩
-    reactor.state.map { $0.displayText }
+    reactor.state.map(\.displayText)
+      .distinctUntilChanged()
       .bind(to: self.resultLabel.rx.text)
       .disposed(by: self.disposeBag)
   }

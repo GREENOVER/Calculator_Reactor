@@ -23,14 +23,16 @@ final class CalculatorReactor: Reactor {
     case dot(String)
     case operation(Operation)
     case clear
+    case loading(Bool)
   }
-  
+
   // 뷰 상태 클래스
   final class State {
     var displayText: String = "0"
     fileprivate var resultNum: Decimal = 0
     fileprivate var operation: Operation?
     fileprivate var inputText: String = "0"
+    fileprivate var isLoading: Bool = false
     
     fileprivate var inputNum: Decimal {
       let value = Decimal(string: inputText)
@@ -67,7 +69,11 @@ final class CalculatorReactor: Reactor {
     case .inputDot(let dot):
       return Observable.just(Mutation.dot(dot))
     case .operation(let operation):
-      return Observable.just(Mutation.operation(operation))
+      return Observable.concat([
+        Observable.just(Mutation.loading(true)),
+        Observable.just(Mutation.operation(operation)).delay(.seconds(1), scheduler: MainScheduler.instance),
+        Observable.just(Mutation.loading(false))
+      ])
     case .clear:
       return Observable.just(Mutation.clear)
     }
@@ -118,7 +124,11 @@ final class CalculatorReactor: Reactor {
       state.displayText = "0"
       state.resultNum = 0
       state.operation = nil
+      
+    case .loading(let loading):
+      state.isLoading = loading
     }
+    
     return state
   }
 }
