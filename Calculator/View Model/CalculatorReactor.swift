@@ -56,7 +56,7 @@ extension CalculatorReactor {
     case .inputDot(let dot):
       return .just(.dot(dot))
     case .operation(let operation):
-      delayCalculator()
+      delayCalculate()
       return .just(.operation(operation))
     case .clear:
       return .just(.clear)
@@ -135,9 +135,12 @@ extension CalculatorReactor {
   }
   
   // MARK: 계산 시간 지연
-  fileprivate func delayCalculator() {
-    DispatchQueue.main.async {
-      Thread.sleep(forTimeInterval: 1)
-    }
+  fileprivate func delayCalculate() -> Single<Int> {
+    return Single.create(subscribe: { single in
+      DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+        single(.success(1))
+      })
+      return Disposables.create()
+    })
   }
 }
