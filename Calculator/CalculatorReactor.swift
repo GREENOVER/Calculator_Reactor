@@ -26,13 +26,13 @@ final class CalculatorReactor: Reactor {
   }
   
   // 뷰 상태 클래스
-  class State {
+  final class State {
     var displayText: String = "0"
-    var resultNum: Decimal = 0
-    var operation: Operation?
-    var inputText: String = "0"
+    fileprivate var resultNum: Decimal = 0
+    fileprivate var operation: Operation?
+    fileprivate var inputText: String = "0"
     
-    var inputNum: Decimal {
+    fileprivate var inputNum: Decimal {
       let value = Decimal(string: inputText)
       
       if value != 0 {
@@ -42,13 +42,13 @@ final class CalculatorReactor: Reactor {
       return resultNum
     }
     
-    func checkPrefixNum() {
+    fileprivate func checkPrefixNum() {
       if !(inputText.contains(".")) && inputText.hasPrefix("0") {
         inputText.removeFirst()
       }
     }
     
-    func checkDot() {
+    fileprivate func checkDot() {
       let dot = inputText.filter{ $0 == "." }
       if dot.count > 1 {
         inputText.remove(at: inputText.lastIndex(of: ".")!)
