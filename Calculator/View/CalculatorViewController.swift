@@ -30,8 +30,8 @@ class CalculatorViewController: UIViewController, StoryboardView {
   @IBOutlet weak var equalButton: UIButton!
   
   func bind(reactor: CalculatorReactor) {
-    // Action
-    // 숫자 및 Dot 버튼 클릭 시 인터렉션 리액터 바인딩
+    /// Action
+    // MARK: 숫자 및 Dot 버튼 클릭 시 인터렉션 리액터 바인딩
     let numberButtons: [UIButton] = [zeroButton, oneButton, twoButton, threeButton, fourButton, fiveButton, sixButton, sevenButton, eightButton, nineButton]
     
     numberButtons.enumerated().forEach({ (button) in
@@ -45,13 +45,13 @@ class CalculatorViewController: UIViewController, StoryboardView {
       .bind(to:reactor.action)
       .disposed(by: self.disposeBag)
     
-    // AC 버튼 클릭 시 인터렉션 리액터 바인딩
+    // MARK: AC 버튼 클릭 시 인터렉션 리액터 바인딩
     self.acButton.rx.tap
       .map { .clear }
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
     
-    // 연산 버튼 클릭 시 인터렉션 리액터 바인딩
+    // MARK: 연산 버튼 클릭 시 인터렉션 리액터 바인딩
     self.signButton.rx.tap
       .map { .operation(.sign({ -$0 })) }
       .bind(to: reactor.action)
@@ -81,8 +81,8 @@ class CalculatorViewController: UIViewController, StoryboardView {
       .bind(to: reactor.action)
       .disposed(by: self.disposeBag)
     
-    // State
-    // 연산 결과 뷰 바인딩
+    /// State
+    // MARK: 연산 결과 뷰 바인딩
     reactor.state.map(\.displayText)
       .distinctUntilChanged()
       .bind(to: self.resultLabel.rx.text)
