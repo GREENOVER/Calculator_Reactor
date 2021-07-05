@@ -44,20 +44,22 @@ final class CalculatorReactor: Reactor {
   }
   
   // MARK: State 초기화 상수 선언
-  let initialState: State = State()
-  
+  let initialState: State = .init()
+}
+
+extension CalculatorReactor {
   // MARK: Action -> Mutation 스트림 변환
   func mutate(action: Action) -> Observable<Mutation> {
     switch action {
     case .inputNumber(let number):
-      return Observable.just(Mutation.number(number))
+      return .just(.number(number))
     case .inputDot(let dot):
-      return Observable.just(Mutation.dot(dot))
+      return .just(.dot(dot))
     case .operation(let operation):
       delayCalculator()
-      return Observable.just(Mutation.operation(operation))
+      return .just(.operation(operation))
     case .clear:
-      return Observable.just(Mutation.clear)
+      return .just(.clear)
     }
   }
   
