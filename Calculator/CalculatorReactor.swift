@@ -33,11 +33,12 @@ final class CalculatorReactor: Reactor {
     var inputText: String = "0"
     
     var inputNum: Decimal {
-      if let value = Decimal(string: inputText) {
-        if value != 0 {
-          return value
-        }
+      let value = Decimal(string: inputText)
+      
+      if value != 0 {
+        return value!
       }
+      
       return resultNum
     }
     
@@ -95,15 +96,15 @@ final class CalculatorReactor: Reactor {
           temp += state.resultNum
           state.resultNum = 0
           state.inputText = String("\(sign(temp))")
+          state.displayText = state.inputText
         }
-        state.displayText = state.inputText
       case .percent(let percent):
         if var temp =  Decimal(string: state.inputText) {
           temp += state.resultNum
           state.resultNum = 0
           state.inputText = String("\(percent(temp))")
+          state.displayText = state.inputText
         }
-        state.displayText = state.inputText
       case .result:
         if case let .operation(operation) = state.operation {
           state.resultNum = operation(state.resultNum, state.inputNum)
@@ -115,6 +116,7 @@ final class CalculatorReactor: Reactor {
     case .clear:
       state.inputText = "0"
       state.displayText = "0"
+      state.resultNum = 0
       state.operation = nil
     }
     return state
