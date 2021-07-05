@@ -25,6 +25,7 @@ final class CalculatorReactor: Reactor {
     case clear
   }
   
+  // 뷰 상태 클래스
   class State {
     var displayText: String = "0"
     var resultNum: Decimal = 0
