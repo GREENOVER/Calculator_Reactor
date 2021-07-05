@@ -54,6 +54,7 @@ final class CalculatorReactor: Reactor {
     case .inputDot(let dot):
       return Observable.just(Mutation.dot(dot))
     case .operation(let operation):
+      delayCalculator()
       return Observable.just(Mutation.operation(operation))
     case .clear:
       return Observable.just(Mutation.clear)
@@ -129,5 +130,12 @@ final class CalculatorReactor: Reactor {
       inputText.remove(at: inputText.lastIndex(of: ".")!)
     }
     return inputText
+  }
+  
+  // MARK: 계산 시간 지연
+  fileprivate func delayCalculator() {
+    DispatchQueue.main.async {
+      Thread.sleep(forTimeInterval: 1)
+    }
   }
 }
