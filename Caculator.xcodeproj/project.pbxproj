@@ -67,7 +67,7 @@
 			children = (
 				1262AE2B26915F5200D3074E /* Supporting Files */,
 				128A09772692B2CB00B554B1 /* View */,
-				128A09792692B2EA00B554B1 /* Reactor */,
+				128A09792692B2EA00B554B1 /* View Model */,
 				125BE945268D946F006FFC48 /* Main.storyboard */,
 				125BE94A268D9470006FFC48 /* LaunchScreen.storyboard */,
 			);
@@ -93,12 +93,12 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		128A09792692B2EA00B554B1 /* Reactor */ = {
+		128A09792692B2EA00B554B1 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
 				129B3D48268EA7E00030167E /* CalculatorReactor.swift */,
 			);
-			path = Reactor;
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		78BE79CB744BE94E5FE4B096 /* Pods */ = {
