@@ -1,6 +1,5 @@
 import Foundation
 import ReactorKit
-import RxSwift
 
 final class CalculatorReactor: Reactor {
   // 버튼에 따른 연산 케이스

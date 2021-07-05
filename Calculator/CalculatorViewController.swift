@@ -1,6 +1,5 @@
 import UIKit
 import ReactorKit
-import RxSwift
 import RxCocoa
 
 class CalculatorViewController: UIViewController, StoryboardView {
